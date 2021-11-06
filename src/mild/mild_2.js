@@ -27,8 +27,8 @@ export function identifyVariable(variable) {
 export function identifyArray(array) {
    let arrRet = [];
    for (let i=0; i<array.length; i++){
-      curType = typeof array[i];
-      dictRet = {type: curType, value: array[i]};
+      let curType = typeof array[i];
+      let dictRet = {type: curType, value: array[i]};
       arrRet.push(dictRet);
    }
    return arrRet;
