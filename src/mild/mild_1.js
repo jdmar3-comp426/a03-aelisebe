@@ -30,7 +30,7 @@ export function getIncreasingArray(startNumber, endNumber) {
     for(let i=cur; i<endNumber+1; i++) {
         myArr.push(i);
     }
-    return console.log(myArr);
+    return myArr;
 
 }
 
@@ -45,7 +45,7 @@ export function maxAndMin(numbers) {
     let min1 = Math.min(...numbers);
     let max1 = Math.max(...numbers)
     var myObj  = {min: min1, max: max1}
-    return console.log(myObj)
+    return myObj)
 }
 
 
@@ -61,6 +61,6 @@ export function maxAndMin(numbers) {
  */
 export function countArray(array) {
     const count = array.reduce(function(acc, count){return acc[count] ? ++ acc[count] : acc[count]=1, acc}, {});
-    return console.log(count)
+    return count
 }
 
