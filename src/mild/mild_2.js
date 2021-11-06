@@ -25,7 +25,7 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
-   var arrRet = [];
+   let arrRet = [];
    for (let i=0; i<array.length; i++){
       curType = typeof array[i];
       dictRet = {type: curType, value: array[i]};
@@ -51,7 +51,7 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-   delete object.key;
+   delete object[key];
 }
 
 /**
@@ -72,7 +72,7 @@ export function removeKey(object, key) {
  */
 export function removeKeyNonDestructive(object, key) {
    let newDict = object
-   delete newDict.key
+   delete newDict[key]
    return newDict
 }
 
