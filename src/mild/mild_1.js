@@ -10,7 +10,8 @@
  */
 export function sumToString(a, b) {
     let sum = a+b;
-    console.log(a + ' + '+b+' = '+sum);
+    let toRet = a + ' + '+b+' = '+sum;
+    console.log(toRet);
 }
 
 /**
@@ -62,3 +63,4 @@ export function countArray(array) {
     const count = array.reduce(function(acc, count){return acc[count] ? ++ acc[count] : acc[count]=1, acc}, {});
     console.log(count)
 }
+
