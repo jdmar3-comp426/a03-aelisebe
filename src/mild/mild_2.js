@@ -51,8 +51,8 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-   const {hold, ...rest} = object;
-   return rest;
+
+   delete object[key];
 }
 
 /**
@@ -72,9 +72,8 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-   let newDict = Object.assign({}, object)
-   delete newDict[key]
-   return newDict
+   const {toRem, ...rest} = object
+   return rest
 }
 
 /**
