@@ -72,7 +72,8 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-   const {key, ...rest} = object
+   let hold = key;
+   const {hold, ...rest} = object
    return rest
 }
 
