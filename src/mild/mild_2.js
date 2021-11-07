@@ -72,7 +72,7 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-   const {toRem, ...rest} = object
+   const {key, ...rest} = object
    return rest
 }
 
