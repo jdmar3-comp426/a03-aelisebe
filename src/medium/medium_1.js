@@ -68,7 +68,7 @@ export function getStatistics(array) {
             max1 = array[i];
         }
     }
-    let varianc = variance(array, mean);
+    let varianc = variance(array, mean1);
     let sd = Math.sqrt(varianc)
     return {
         length: length1,
