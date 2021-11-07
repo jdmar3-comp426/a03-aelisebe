@@ -103,5 +103,5 @@ export function removeKeys(object, keyList) {
       let curKey = keyList[i];
       delete object[curKey];
    }
-   return object;
+   
 }
