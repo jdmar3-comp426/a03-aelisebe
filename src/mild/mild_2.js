@@ -6,7 +6,7 @@
  * returns: { type: 'number', value: 4 }
  */
 export function identifyVariable(variable) {
-   let varType = typeof variable;
+   var varType = typeof variable;
    return {type: varType, value: variable};
 }
 
@@ -73,8 +73,9 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-   const {key, ...rest} = object
-   return rest
+   const removeKey = key;
+   const{ [removeKey]: remove, ...rest}= object;
+   return rest;
 }
 
 /**
