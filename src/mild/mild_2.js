@@ -51,10 +51,8 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-   const removeKey = key;
-   const{ [removeKey]: remove, ...rest}= object;
-   object = rest;
-   return object;
+   const removeKey1 = key;
+   delete object[removeKey1];
 }
 
 /**
