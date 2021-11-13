@@ -40,7 +40,7 @@ export const allCarStats = {
     avgMpg: {city: citystat['mean'], highway: highwaystat['mean']},
     allYearStats: yearStat,
     ratioHybrids: countH/totalCar
-    
+
 };
 
 
@@ -101,7 +101,49 @@ export const allCarStats = {
  *
  * }
  */
+
+const yearArr = mpg_data.map(a => a.year, a.city_mpg, a.highway_mpg, a.hybrid);
+const arrByYear = {};
+for(let i=0; i<yearArr.length; i++){
+    if(yearArr[i] in arrByYear){
+        if(yearArr[i].hybrid===true){
+            arrByYear[yearArr[i].year].hybrid.city.push(yearArr[i].city_mpg);
+            arrByYear[yearArr[i].year].hybrid.highway.push(yearArr[i].highway_mpg);
+        } else {
+            arrByYear[yearArr[i].year].notHybrid.city.push(yearArr[i].city_mpg);
+            arrByYear[yearArr[i].year].notHybrid.highway.push(yearArr[i].highway_mpg);
+        }
+    } else {
+        arrByYear[yearArr[i].year] = {"hybrid": {"city":[], "highway": []}, "notHybrid":{"city":[], "highway":[]}};
+        if(yearArr[i].hybrid===true){
+            arrByYear[yearArr[i].year].hybrid.city.push(yearArr[i].city_mpg);
+            arrByYear[yearArr[i].year].hybrid.highway.push(yearArr[i].highway_mpg);
+        } else {
+            arrByYear[yearArr[i].year].notHybrid.city.push(yearArr[i].city_mpg);
+            arrByYear[yearArr[i].year].notHybrid.highway.push(yearArr[i].highway_mpg);
+        }
+    }
+}
+
+const yearObj = {};
+for(var key in arrByYear){
+    yearObj[key]={key: {"hybrid":{"city":getStatistics(arrByYear[key].hybrid.city)['mean'], "highway": getStatistics(arrByYear[key].hybrid.highway)['mean']}, "notHybrid": {"city": getStatistics(arrByYear[key].notHybrid.city)['mean'], "highway": getStatistics(arrByYear[key].notHybrid.highway)['mean']}}})
+}
+
+
+const model = mpg_data.map(a => a.make, a.model_number, a.hybrid);
+const hybridmodel = model.filter(a => a.hybrid===true);
+const mHybrids = [];
+for(let i=0; i<hybridmodel.length; i++){
+    if(hybridmodel[i].make in mHybrids){
+        mHybrids[hybridmodel[i].make].hybrids.push(hybridmodel[i].model_number)
+    } else {
+        mHybrids.push({"make": hybridmodel[i].make, "hybrids": [hybridmodel[i].model_number]})
+    }
+}
+mHybrids.sort((a,b) => (a.hybrids.length > b.hybrids.length ? -1:1));
+
 export const moreStats = {
-    makerHybrids: undefined,
-    avgMpgByYearAndHybrid: undefined
+    makerHybrids: mHybrids,
+    avgMpgByYearAndHybrid: yearObj
 };
