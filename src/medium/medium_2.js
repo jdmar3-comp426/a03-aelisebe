@@ -127,7 +127,7 @@ for(let i=0; i<yearArr.length; i++){
 
 const yearObj = {};
 for(var key in arrByYear){
-    yearObj[key]={key: {"hybrid":{"city":getStatistics(arrByYear[key].hybrid.city)['mean'], "highway": getStatistics(arrByYear[key].hybrid.highway)['mean']}, "notHybrid": {"city": getStatistics(arrByYear[key].notHybrid.city)['mean'], "highway": getStatistics(arrByYear[key].notHybrid.highway)['mean']}}})
+    yearObj[key]={key: {"hybrid":{"city":getStatistics(arrByYear[key].hybrid.city)['mean'], "highway": getStatistics(arrByYear[key].hybrid.highway)['mean']}, "notHybrid": {"city": getStatistics(arrByYear[key].notHybrid.city)['mean'], "highway": getStatistics(arrByYear[key].notHybrid.highway)['mean']}}}
 }
 
 
