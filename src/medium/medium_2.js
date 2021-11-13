@@ -19,13 +19,13 @@ see under the methods section
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
-var citympg = mpg_data.map(city_mpg);
+var citympg = mpg_data.map(a => a.mpg_data);
 var citystat = getStatistics(citympg);
-var highmpg = mpg_data.map(highway_mpg);
+var highmpg = mpg_data.map(a => a.highway_mpg);
 var highwaystat = getStatistics(highmpg);
-var years = mpg_data.map(year);
+var years = mpg_data.map(a => a.year);
 var yearStat = getStatistics(years);
-var hybridc = mpg_data.map(hybrid);
+var hybridc = mpg_data.map(a => a.hybrid);
 var totalCar = hybridc.length
 var countH = 0;
 for(let i=0; i<totalCar; i++){
