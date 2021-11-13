@@ -144,6 +144,6 @@ for(let i=0; i<hybridmodel.length; i++){
 mHybrids.sort((a,b) => (a.hybrids.length > b.hybrids.length ? -1:1));
 
 export const moreStats = {
-    makerHybrids: mHybrids,
+    makerHybrids: yearArr,
     avgMpgByYearAndHybrid: yearObj
 };
