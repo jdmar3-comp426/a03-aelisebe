@@ -105,7 +105,7 @@ export const allCarStats = {
 var yearArr = mpg_data.map(a => ({"year": a.year, "city_mpg": a.city_mpg,"highway_mpg": a.highway_mpg,"hybrid": a.hybrid}));
 const arrByYear = {};
 for(let i=0; i<yearArr.length; i++){
-    if(yearArr[i] in arrByYear){
+    if(yearArr[i].year in arrByYear){
         if(yearArr[i].hybrid===true){
             arrByYear[yearArr[i].year].hybrid.city.push(yearArr[i].city_mpg);
             arrByYear[yearArr[i].year].hybrid.highway.push(yearArr[i].highway_mpg);
