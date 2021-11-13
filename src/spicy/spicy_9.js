@@ -160,7 +160,7 @@ export const someEven = (arr, test) => {
  */
 export const filter = (arr, test) => {
     let bool = false;
-    let toRet={"fail": [], "pass": []};
+    let toRet={"pass": [], "fail": []};
     for(let i=0; i<arr.length; i++){
         bool = test(arr[i]);
         if(bool === true){
@@ -200,7 +200,7 @@ export const anEvenIsOdd = (arr) => {
  *   pass the test. You must use the filter function.
  */
 export const hasExactly = (arr, test, n) => {
-    let fil = arr.filter(arr, test);
+    let fil = filter(arr, test);
     if(fil["pass"].length===n){
         return true;
     } else {
