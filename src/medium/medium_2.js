@@ -102,7 +102,7 @@ export const allCarStats = {
  * }
  */
 
-var yearArr = mpg_data.map(a => a.year, a.city_mpg, a.highway_mpg, a.hybrid);
+var yearArr = mpg_data.map(a => ({"year": a.year, "city_mpg": a.city_mpg,"highway_mpg": a.highway_mpg,"hybrid": a.hybrid}));
 const arrByYear = {};
 for(let i=0; i<yearArr.length; i++){
     if(yearArr[i] in arrByYear){
@@ -131,7 +131,7 @@ for(var key in arrByYear){
 }
 
 
-var model = mpg_data.map(a => a.make, a.model_number, a.hybrid);
+var model = mpg_data.map(a => ({"make": a.make,"model_number": a.model_number,"hybrid": a.hybrid}));
 var hybridmodel = model.filter(a => a.hybrid===true);
 var mHybrids = [];
 for(let i=0; i<hybridmodel.length; i++){
