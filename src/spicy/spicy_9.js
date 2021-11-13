@@ -18,7 +18,7 @@
 export const repeat = (fn, n, ...params) => {
     let toRet=[]
     for(let i=0; i<n; i++){
-        toRet.push(fn(params));
+        toRet.push(fn(params[0]));
     }
     return toRet;
 };
