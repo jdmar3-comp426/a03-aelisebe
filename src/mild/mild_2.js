@@ -102,7 +102,7 @@ export function removeKeys(object, keyList) {
    let i=1;
    let rest = removeKeyNonDestructive(object, keyList[0]);
    while(i<keyList.length){
-      rest = removeKeyNonDestructive(object, keyList[i]);
+      rest = removeKeyNonDestructive(rest, keyList[i]);
       i++;
    }
    return rest;
