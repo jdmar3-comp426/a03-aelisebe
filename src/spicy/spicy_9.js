@@ -14,8 +14,13 @@
  * @return        Returns an array containing the return values obtained
  *                from calling the function
  */
-export const repeat = (fn, n, ...params) => {
 
+export const repeat = (fn, n, ...params) => {
+    toRet=[]
+    for(let i=0; i<n; i++){
+        toRet.push(fn(params));
+    }
+    return toRet;
 };
 
 
@@ -24,7 +29,7 @@ export const repeat = (fn, n, ...params) => {
  *   10 times.
  */
 export const repeatDemo = () => {
-
+    repeat(console.log(), 10, ["Hello, world"])
 };
 
 
