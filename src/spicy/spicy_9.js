@@ -160,7 +160,7 @@ export const someEven = (arr, test) => {
  */
 export const filter = (arr, test) => {
     let bool = false;
-    toRet={"fail": [], "pass": []};
+    let toRet={"fail": [], "pass": []};
     for(let i=0; i<arr.length; i++){
         bool = test(arr[i]);
         if(bool === true){
