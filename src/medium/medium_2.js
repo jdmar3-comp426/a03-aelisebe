@@ -127,8 +127,8 @@ for(let i=0; i<yearArr.length; i++){
 
 const yearObj = {};
 for(var key in arrByYear){
-    yearObj[key]={"hybrid":{"city":getStatistics(arrByYear[key].hybrid.city)['mean'], "highway": getStatistics(arrByYear[key].hybrid.highway)['mean']}, "notHybrid": {"city": getStatistics(arrByYear[key].notHybrid.city)['mean'], "highway": getStatistics(arrByYear[key].notHybrid.highway)['mean']}}}
-
+    yearObj[key]={"hybrid":{"city":getStatistics(arrByYear[key].hybrid.city)['mean'], "highway": getStatistics(arrByYear[key].hybrid.highway)['mean']}, "notHybrid": {"city": getStatistics(arrByYear[key].notHybrid.city)['mean'], "highway": getStatistics(arrByYear[key].notHybrid.highway)['mean']}}
+}
 
 
 var model = mpg_data.map(a => ({"make": a.make,"model_number": a.model_number,"hybrid": a.hybrid}));
@@ -144,6 +144,6 @@ for(let i=0; i<hybridmodel.length; i++){
 mHybrids.sort((a,b) => (a.hybrids.length > b.hybrids.length ? -1:1));
 
 export const moreStats = {
-    makerHybrids: yearArr,
-    avgMpgByYearAndHybrid: yearObj
+    makerHybrids: mHybrids,
+    avgMpgByYearAndHybrid: arrByYear
 };
