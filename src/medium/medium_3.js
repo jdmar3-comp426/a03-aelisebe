@@ -18,7 +18,9 @@ queries.
  *
  */
 export function searchHighPower(car_data, minHorsepower, minTorque) {
+    let toRet = car_data.filter(function(e){return (e["horsepower"]>= minHorsepower) && (e["torque"]>=minTorque)})
 
+    return toRet;
 }
 
 
