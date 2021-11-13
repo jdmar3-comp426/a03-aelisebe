@@ -39,7 +39,8 @@ for(let i=0; i<totalCar; i++){
 export const allCarStats = {
     avgMpg: {city: citystat['mean'], highway: highwaystat['mean']},
     allYearStats: yearStat,
-    ratioHybrids: countH/totalCar,
+    ratioHybrids: countH/totalCar
+    
 };
 
 
